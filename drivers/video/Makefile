@@ -185,7 +185,9 @@ obj-$(CONFIG_FB_VIRTUAL)          += vfb.o
 obj-$(CONFIG_VIDEO_OUTPUT_CONTROL) += output.o
 
 ifeq ($(CONFIG_ODROID_UMP),y)
-	EXTRA_CFLAGS += -Idrivers/media/video/samsung/ump_r3p2 \
-			-Idrivers/media/video/samsung/mali_r3p2/common \
-			-Idrivers/media/video/samsung/mali_r3p2/linux
+	EXTRA_CFLAGS += -Idrivers/media/video/samsung/ump_r4p0 \
+			-Idrivers/media/video/samsung/mali_r4p0/common \
+			-Idrivers/media/video/samsung/mali_r4p0/linux \
+			-Idrivers/media/video/samsung/mali_r4p0/linux/license/gpl \
+			-Iinclude/ump
 endif

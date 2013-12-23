@@ -26,21 +26,21 @@ config VIDEO_MALI_R2P4
         help
           Use Mali r2p4 version
 
-config VIDEO_MALI_R3P2
-        bool "Use Mali r3p2 version"
+config VIDEO_MALI_R4P0
+        bool "Use Mali r4p0 version"
         depends on VIDEO_SAMSUNG
         default n
         help
-          Use Mali r3p2 version
+          Use Mali r4p0 version
 
 if VIDEO_MALI_R2P4
         source "drivers/media/video/samsung/ump/Kconfig"
         source "drivers/media/video/samsung/mali/Kconfig"
 endif
 
-if VIDEO_MALI_R3P2
-        source "drivers/media/video/samsung/ump_r3p2/Kconfig"
-        source "drivers/media/video/samsung/mali_r3p2/Kconfig"
+if VIDEO_MALI_R4P0
+        source "drivers/media/video/samsung/ump_r4p0/Kconfig"
+        source "drivers/media/video/samsung/mali_r4p0/Kconfig"
 endif
 
 config VIDEO_FIMG2D

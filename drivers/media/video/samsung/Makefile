@@ -17,9 +17,9 @@ ifeq ($(CONFIG_VIDEO_MALI_R2P4),y)
         obj-$(CONFIG_VIDEO_MALI400MP)   += mali/
 endif
 
-ifeq ($(CONFIG_VIDEO_MALI_R3P2),y)
-        obj-$(CONFIG_UMP)               += ump_r3p2/
-        obj-$(CONFIG_MALI400)           += mali_r3p2/
+ifeq ($(CONFIG_VIDEO_MALI_R4P0),y)
+        obj-$(CONFIG_UMP)               += ump_r4p0/ umplock/
+        obj-$(CONFIG_MALI400)           += mali_r4p0/
 endif
 
 obj-$(CONFIG_VIDEO_TSI)		+= tsi/
