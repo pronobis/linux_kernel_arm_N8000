@@ -9,7 +9,7 @@
 #include "arm.h"
 
 /* platform functions start */
-#ifdef CONFIG_REGULATOR
+#ifdef CONFIG_REGULATOR_MALI
 int mali_regulator_get_usecount(void)
 {
 	struct regulator_dev *rdev;
@@ -311,11 +311,11 @@ mali_bool init_mali_clock(void) {
 	if (mali_clock != 0)
 		return ret; // already initialized
 
-	mali_dvfs_lock = _mali_osk_lock_init(
+/*	mali_dvfs_lock = _mali_osk_lock_init(
 			_MALI_OSK_LOCKFLAG_NONINTERRUPTABLE | _MALI_OSK_LOCKFLAG_ONELOCK, 0,
 			0);
 	if (mali_dvfs_lock == NULL)
-		return _MALI_OSK_ERR_FAULT;
+		return _MALI_OSK_ERR_FAULT;*/
 
 	if (mali_clk_set_rate(mali_gpu_clk, GPU_MHZ) == MALI_FALSE) {
 		ret = MALI_FALSE;
@@ -324,7 +324,7 @@ mali_bool init_mali_clock(void) {
 
 	MALI_PRINT(("init_mali_clock mali_clock %p \n", mali_clock));
 
-#ifdef CONFIG_REGULATOR
+#ifdef CONFIG_REGULATOR_MALI
 #if USING_MALI_PMM
 	g3d_regulator = regulator_get(&mali_gpu_device.dev, "vdd_g3d");
 #else
@@ -355,7 +355,7 @@ mali_bool init_mali_clock(void) {
 
 	return MALI_TRUE;
 
-#ifdef CONFIG_REGULATOR
+#ifdef CONFIG_REGULATOR_MALI
 	err_regulator:
 	regulator_put(g3d_regulator);
 #endif
@@ -369,7 +369,7 @@ mali_bool deinit_mali_clock(void) {
 	if (mali_clock == 0)
 		return MALI_TRUE;
 
-#ifdef CONFIG_REGULATOR
+#ifdef CONFIG_REGULATOR_MALI
 	if (g3d_regulator)
 	{
 		regulator_put(g3d_regulator);

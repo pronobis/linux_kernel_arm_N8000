@@ -123,7 +123,7 @@ static mali_bool mali_vol_lock_flag = 0;
 int gpu_power_state;
 static int bPoweroff;
 
-#ifdef CONFIG_REGULATOR
+#ifdef CONFIG_REGULATOR_MALI
 struct regulator {
 	struct device *dev;
 	struct list_head list;
@@ -148,7 +148,7 @@ extern struct platform_device exynos4_device_pd[];
 
 mali_io_address clk_register_map = 0;
 
-_mali_osk_lock_t *mali_dvfs_lock = 0;
+//_mali_osk_lock_t *mali_dvfs_lock = 0;
 
 /* platform setup for Exynos4412 */
 static struct resource mali_gpu_resources_m400_mp4[] = {
