@@ -356,7 +356,7 @@ static int ump_file_ioctl(struct inode *inode, struct file *filp, unsigned int c
 	return err;
 }
 
-int map_errcode( _mali_osk_errcode_t err )
+/*int map_errcode( _mali_osk_errcode_t err )
 {
 	switch(err) {
 	case _MALI_OSK_ERR_OK :
@@ -378,7 +378,7 @@ int map_errcode( _mali_osk_errcode_t err )
 	default:
 		return -EFAULT;
 	}
-}
+}*/
 
 /*
  * Handle from OS to map specified virtual memory to specified UMP memory.
