@@ -2035,6 +2035,10 @@ static struct platform_device *midas_devices[] __initdata = {
 	&exynos_mali_drm,
 #endif
 
+#if defined(CONFIG_VIDEO_MALI_R4P0)
+	&mali_gpu_device,
+#endif
+
 #ifdef CONFIG_DRM_EXYNOS_FIMD
 	&s5p_device_fimd0,
 #endif

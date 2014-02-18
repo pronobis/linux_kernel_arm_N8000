@@ -106,7 +106,7 @@ mali-y += \
 	common/mali_pm_domain.o \
 	linux/mali_osk_pm.o \
 	linux/mali_pmu_power_up_down.o \
-	platform/pegasus-m400/arm.o \
+	platform/pegasus-m400/mali_platform.o \
 	__malidrv_build_info.o
 
 ifneq ($(MALI_PLATFORM_FILES),)
@@ -129,7 +129,7 @@ mali-$(CONFIG_MALI400_POWER_PERFORMANCE_POLICY) += common/mali_power_performance
 # Tell the Linux build system from which .o file to create the kernel module
 obj-$(CONFIG_MALI400) := mali.o
 
-export EXTRA_DEFINES += -DMALI_FAKE_PLATFORM_DEVICE=1
+#export EXTRA_DEFINES += -DMALI_FAKE_PLATFORM_DEVICE=1
 export EXTRA_DEFINES += -DCONFIG_MALI400_UMP=1
 export EXTRA_DEFINES += -DMALI_PMM_RUNTIME_JOB_CONTROL_ON=0
 export EXTRA_DEFINES += -D_MALI_OSK_SPECIFIC_INDIRECT_MMAP

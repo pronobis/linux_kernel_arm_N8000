@@ -207,6 +207,7 @@ extern struct platform_device s5p_device_hpd;
 extern struct platform_device s5p_device_ace;
 extern struct platform_device s5p_device_fimg2d;
 extern struct platform_device exynos_device_rotator;
+extern struct platform_device mali_gpu_device;
 
 extern struct platform_device s5p_device_ehci;
 extern struct platform_device s5p_device_ohci;
