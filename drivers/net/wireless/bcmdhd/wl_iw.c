@@ -24,6 +24,8 @@
  * $Id: wl_iw.c 352251 2012-08-22 06:08:38Z $
  */
 
+#define USE_IW
+
 #if defined(USE_IW)
 #define LINUX_PORT
 
